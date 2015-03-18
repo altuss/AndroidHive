@@ -112,7 +112,6 @@ public class AlertDialogActivity extends ActionBarActivity {
             }
         });
 
-
         // Setting Netural "Cancel" Button
         alertDialog3.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
