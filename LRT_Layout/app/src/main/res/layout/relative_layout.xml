@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Email:"
+        android:id="@+id/label"
+        android:padding="10dp"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/label"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/inputEmail"
+        android:layout_marginBottom="10dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2a2a2a"
+        android:id="@+id/loginButton"
+        android:layout_below="@id/inputEmail"
+        android:layout_alignLeft="@id/inputEmail"
+        android:text="Login"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:layout_toRightOf="@id/loginButton"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@id/loginButton"
+        android:id="@+id/cancelButton"
+        android:text="Cancel"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_orange_light"
+        android:text="Register new account"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"/>
+
+</RelativeLayout>
