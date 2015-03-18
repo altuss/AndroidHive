@@ -22,7 +22,6 @@ public class AlertDialogActivity extends ActionBarActivity {
         alert2 = (Button) findViewById(R.id.button2);
         alert3 = (Button) findViewById(R.id.button3);
 
-
         final AlertDialog.Builder alertDialog = new AlertDialog.Builder(AlertDialogActivity.this);
         // Setting Dialog Title
         alertDialog.setTitle("Alert Dialog");
