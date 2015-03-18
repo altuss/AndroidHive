@@ -11,7 +11,7 @@ public class LayoutsActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.table_layoutori);
+        setContentView(R.layout.table_layout);
     }
 
     @Override
