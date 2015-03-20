@@ -80,7 +80,7 @@ public class MainActivity extends ListActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             // Showing progress dialog
-            progressDialog = new ProgressDialog(getApplicationContext());
+            progressDialog = new ProgressDialog(MainActivity.this);
             progressDialog.setMessage("Please wait...");
             progressDialog.setCancelable(false);
             progressDialog.show();

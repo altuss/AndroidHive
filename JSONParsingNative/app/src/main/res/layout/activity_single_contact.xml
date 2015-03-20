@@ -20,8 +20,6 @@
         android:text="Medium Text"
         android:id="@+id/email"
         android:layout_below="@+id/name"
-        android:layout_alignRight="@+id/name"
-        android:layout_alignEnd="@+id/name"
         android:layout_marginTop="18dp" />
 
     <TextView
