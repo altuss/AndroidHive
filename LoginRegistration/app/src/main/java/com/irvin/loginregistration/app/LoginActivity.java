@@ -111,12 +111,12 @@ public class LoginActivity extends ActionBarActivity {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "Login Response: " + response.toString());
+                Log.d(TAG, "Login Response: " + "\n" + response.toString());
                 hideDialog();
 
                 try {
 
-                    JSONObject jObj = new JSONObject(response.substring(3));
+                    JSONObject jObj = new JSONObject(response);
                     boolean error = jObj.getBoolean("error");
 
                     // Check for error node in json
