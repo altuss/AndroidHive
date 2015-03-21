@@ -149,7 +149,6 @@ public class RegisterActivity extends Activity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
 
