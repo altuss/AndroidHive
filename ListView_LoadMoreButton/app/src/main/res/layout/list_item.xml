@@ -6,7 +6,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ID: "/>
+        android:text="ID: " />
 
     <TextView
         android:id="@+id/id"
@@ -17,8 +17,7 @@
         android:textStyle="bold"
         android:gravity="left"
         android:padding="10dip"
-        android:textSize="16dp">
-    </TextView>
+        android:textSize="16dp"></TextView>
 
     <!-- List item name -->
     <TextView
@@ -30,6 +29,5 @@
         android:textStyle="bold"
         android:gravity="left"
         android:padding="10dip"
-        android:textSize="16dp">
-    </TextView>
+        android:textSize="16dp"></TextView>
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.irvin.listview_loadmorebutton;
+package com.irvin.xmlparser;
 
 import android.util.Log;
 

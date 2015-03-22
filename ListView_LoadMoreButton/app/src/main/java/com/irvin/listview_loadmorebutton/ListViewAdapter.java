@@ -17,7 +17,7 @@ import java.util.HashMap;
 public class ListViewAdapter extends BaseAdapter {
 
     private Activity activity;
-    private ArrayList<HashMap<String,String>> data;
+    private ArrayList<HashMap<String, String>> data;
     private static LayoutInflater inflater = null;
 
     public ListViewAdapter(Activity activity, ArrayList<HashMap<String, String>> data) {
@@ -50,7 +50,7 @@ public class ListViewAdapter extends BaseAdapter {
         TextView id = (TextView) view.findViewById(R.id.id);
         TextView name = (TextView) view.findViewById(R.id.name);
 
-        HashMap<String,String> item = new HashMap<String,String>();
+        HashMap<String, String> item = new HashMap<String, String>();
         item = data.get(position);
 
         id.setText(item.get("id"));

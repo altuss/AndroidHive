@@ -2,8 +2,8 @@ package com.irvin.listview_loadmorebutton;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,9 +25,9 @@ public class MainActivity extends ActionBarActivity {
     private String xml;
     private ListView listView;
     private ListViewAdapter adapter;
-    private ArrayList<HashMap<String,String>> menuItems;
+    private ArrayList<HashMap<String, String>> menuItems;
     private ProgressDialog pDialog;
-    
+
 
     // XML node names
     private static final String KEY_ITEM = "item"; // parent node
@@ -88,6 +88,7 @@ public class MainActivity extends ActionBarActivity {
 
     private class loadMoreListView extends AsyncTask<Void, Void, Void> {
         int currentPosition;
+
         @Override
         protected void onPreExecute() {
             pDialog = new ProgressDialog(MainActivity.this);
