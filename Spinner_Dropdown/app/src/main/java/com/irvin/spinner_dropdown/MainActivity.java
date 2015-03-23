@@ -32,7 +32,6 @@ public class MainActivity extends ActionBarActivity {
         categories.add("Education");
         categories.add("Personal");
         categories.add("Travel");
-        spinner.setSelected();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
