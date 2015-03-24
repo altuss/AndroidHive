@@ -15,7 +15,7 @@ import org.xmlpull.v1.XmlPullParser;
 
 public class MainActivity extends ActionBarActivity {
 
-    private String finalUrl="http://www.klix.ba/rss/naslovnica";
+    private String finalUrl="http://www.b92.net/info/rss/novo.xml";
     private XMLParser parser;
     private EditText title,link,description;
     private Button button;
@@ -59,7 +59,8 @@ public class MainActivity extends ActionBarActivity {
         protected String doInBackground(String... params) {
             String url = params[0];
             parser = new XMLParser();
-            feed = parser.ParseXMLAndStore(parser.fetchXML(url));
+            String rssUrl = parser.getRSSLinkFromUrl(url);
+            feed = parser.ParseXMLAndStore(parser.fetchXML(rssUrl));
             return null;
         }
 

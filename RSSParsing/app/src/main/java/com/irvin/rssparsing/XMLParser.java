@@ -1,5 +1,10 @@
 package com.irvin.rssparsing;
 
+import android.util.Log;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -70,6 +75,38 @@ public class XMLParser {
         }
         return feed;
 
+    }
+    /**
+     * Getting RSS feed link from HTML source code
+     *
+     * @param ulr is url of the website
+     * @returns url of rss link of website
+     * */
+    public String getRSSLinkFromUrl(String url) {
+        // RSS url
+        String rss_url = null;
+
+        try {
+            // Using JSOUP to parse html source code
+            Document doc = Jsoup.connect(url).get();
+            // Finding rss links which are having link [type=application/rss+xml]
+            Elements links = doc.select("link[type=application/rss+xml]");
+            Log.d("No of RSS links found", " " + links.size());
+
+            // check if urls found or not
+            if (links.size() > 0) {
+                rss_url = links.get(0).attr("href").toString();
+            } else {
+                // finding rss links which are having link[type=application/rss+xml]
+                Elements links1 = doc.select("link[type=application/atom+xml");
+                if (links1.size() > 0) {
+                    rss_url = links1.get(0).attr("href").toString();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return url;
     }
 
     public InputStream fetchXML(String urlAddress) {
