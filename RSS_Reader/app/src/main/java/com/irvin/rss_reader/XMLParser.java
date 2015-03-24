@@ -32,7 +32,7 @@ public class XMLParser {
     public String getXmlFromUrl(String url) {
         String xml = null;
         try {
-// defaultHttpClient
+            // defaultHttpClient
             DefaultHttpClient httpClient = new DefaultHttpClient();
             HttpPost httpPost = new HttpPost(url);
             HttpResponse httpResponse = httpClient.execute(httpPost);
@@ -45,7 +45,7 @@ public class XMLParser {
         } catch (IOException e) {
             e.printStackTrace();
         }
-// return XML
+        // return XML
         return xml;
     }
     /**
