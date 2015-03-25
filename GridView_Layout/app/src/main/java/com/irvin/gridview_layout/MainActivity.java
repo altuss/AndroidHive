@@ -1,8 +1,10 @@
 package com.irvin.gridview_layout;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +14,11 @@ import android.widget.GridView;
 
 public class MainActivity extends ActionBarActivity {
     private GridView gridView;
+    private Utils utils;
+    private int columnWidth;
+
+    public static final int NUM_OF_COLUMNS = 3;
+    public static final int GRID_PADDING = 8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +27,11 @@ public class MainActivity extends ActionBarActivity {
 
         gridView = (GridView) findViewById(R.id.grid_view);
 
-        gridView.setAdapter(new ImageAdapter(this));
+        utils = new Utils(this);
+        initilizeGridLayout();
+
+        gridView.setAdapter(new ImageAdapter(this, columnWidth));
+
 
         /**
          * On Click event for Single Grid Item
@@ -36,6 +47,22 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void initilizeGridLayout() {
+        Resources r = getResources();
+        float padding = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                GRID_PADDING, r.getDisplayMetrics());
+
+        columnWidth = (int) ((utils.getScreenWidth() - ((NUM_OF_COLUMNS + 1) * padding)) / NUM_OF_COLUMNS);
+
+        gridView.setNumColumns(NUM_OF_COLUMNS);
+        gridView.setColumnWidth(columnWidth);
+        gridView.setStretchMode(GridView.NO_STRETCH);
+        gridView.setPadding((int) padding, (int) padding, (int) padding,
+                (int) padding);
+        gridView.setHorizontalSpacing((int) padding);
+        gridView.setVerticalSpacing((int) padding);
     }
 
     @Override
